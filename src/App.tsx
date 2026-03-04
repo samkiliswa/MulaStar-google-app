@@ -29,6 +29,8 @@ interface EarningCardProps {
   category: string;
 }
 
+const REGISTER_URL = "https://mulastar.com/register.php?ref=samkiliswa";
+
 const EarningCard: React.FC<EarningCardProps> = ({ icon: Icon, title, description, reward, category }) => (
   <motion.div 
     whileHover={{ y: -5 }}
@@ -47,9 +49,14 @@ const EarningCard: React.FC<EarningCardProps> = ({ icon: Icon, title, descriptio
         <DollarSign size={16} />
         <span>{reward}</span>
       </div>
-      <button className="flex items-center gap-1 text-sm font-semibold text-neutral-900 hover:text-emerald-600 transition-colors">
+      <a 
+        href={REGISTER_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-1 text-sm font-semibold text-neutral-900 hover:text-emerald-600 transition-colors"
+      >
         Start <ChevronRight size={16} />
-      </button>
+      </a>
     </div>
   </motion.div>
 );
@@ -122,19 +129,24 @@ export default function App() {
               <span className="text-xl font-black tracking-tighter text-neutral-900">MulaStar</span>
             </div>
             <div className="hidden md:flex items-center gap-8 text-sm font-medium text-neutral-600">
-              <a href="#" className="hover:text-emerald-600 transition-colors">Dashboard</a>
-              <a href="#" className="hover:text-emerald-600 transition-colors">Earnings</a>
-              <a href="#" className="hover:text-emerald-600 transition-colors">Academy</a>
-              <a href="#" className="hover:text-emerald-600 transition-colors">Support</a>
+              <a href={REGISTER_URL} target="_blank" rel="noopener noreferrer" className="hover:text-emerald-600 transition-colors">Dashboard</a>
+              <a href={REGISTER_URL} target="_blank" rel="noopener noreferrer" className="hover:text-emerald-600 transition-colors">Earnings</a>
+              <a href={REGISTER_URL} target="_blank" rel="noopener noreferrer" className="hover:text-emerald-600 transition-colors">Academy</a>
+              <a href={REGISTER_URL} target="_blank" rel="noopener noreferrer" className="hover:text-emerald-600 transition-colors">Support</a>
             </div>
             <div className="flex items-center gap-4">
               <div className="hidden sm:flex flex-col items-end">
                 <span className="text-[10px] uppercase font-bold text-neutral-400 leading-none">Balance</span>
                 <span className="text-sm font-bold text-emerald-600">${balance.toFixed(2)}</span>
               </div>
-              <button className="bg-neutral-900 text-white px-5 py-2 rounded-full text-sm font-bold hover:bg-neutral-800 transition-all shadow-lg shadow-neutral-200">
+              <a 
+                href={REGISTER_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-neutral-900 text-white px-5 py-2 rounded-full text-sm font-bold hover:bg-neutral-800 transition-all shadow-lg shadow-neutral-200"
+              >
                 Withdraw
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -174,13 +186,23 @@ export default function App() {
               transition={{ delay: 0.3 }}
               className="flex flex-wrap gap-4"
             >
-              <button className="bg-emerald-400 text-emerald-950 px-8 py-4 rounded-2xl font-black text-lg hover:bg-emerald-300 transition-all flex items-center gap-2 group">
+              <a 
+                href={REGISTER_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-emerald-400 text-emerald-950 px-8 py-4 rounded-2xl font-black text-lg hover:bg-emerald-300 transition-all flex items-center gap-2 group"
+              >
                 Get Started Now
                 <ArrowUpRight className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-              </button>
-              <button className="bg-white/10 backdrop-blur-md border border-white/20 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-white/20 transition-all">
+              </a>
+              <a 
+                href={REGISTER_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white/10 backdrop-blur-md border border-white/20 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-white/20 transition-all"
+              >
                 View Tutorials
-              </button>
+              </a>
             </motion.div>
           </div>
           
@@ -229,7 +251,14 @@ export default function App() {
               <h2 className="text-3xl font-black tracking-tight text-neutral-900">Earn Opportunities</h2>
               <p className="text-neutral-500">Choose your preferred way to make money today.</p>
             </div>
-            <button className="text-sm font-bold text-emerald-600 hover:underline">View All</button>
+            <a 
+              href={REGISTER_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-bold text-emerald-600 hover:underline"
+            >
+              View All
+            </a>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {opportunities.map((opt, idx) => (
@@ -252,12 +281,22 @@ export default function App() {
             Join thousands of users who are already making a living online with MulaStar. Our platform is safe, secure, and pays out daily.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-emerald-500 text-white px-8 py-4 rounded-2xl font-bold hover:bg-emerald-400 transition-all">
+            <a 
+              href={REGISTER_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-emerald-500 text-white px-8 py-4 rounded-2xl font-bold hover:bg-emerald-400 transition-all"
+            >
               Create Free Account
-            </button>
-            <button className="bg-neutral-800 text-white px-8 py-4 rounded-2xl font-bold hover:bg-neutral-700 transition-all border border-neutral-700">
+            </a>
+            <a 
+              href={REGISTER_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-neutral-800 text-white px-8 py-4 rounded-2xl font-bold hover:bg-neutral-700 transition-all border border-neutral-700"
+            >
               Contact Support
-            </button>
+            </a>
           </div>
         </div>
       </main>
@@ -273,9 +312,9 @@ export default function App() {
             </div>
             <p className="text-sm text-neutral-500">© 2026 MulaStar. All rights reserved. Make money responsibly.</p>
             <div className="flex gap-6 text-sm font-medium text-neutral-400">
-              <a href="#" className="hover:text-neutral-900">Privacy</a>
-              <a href="#" className="hover:text-neutral-900">Terms</a>
-              <a href="#" className="hover:text-neutral-900">Cookies</a>
+              <a href={REGISTER_URL} target="_blank" rel="noopener noreferrer" className="hover:text-neutral-900">Privacy</a>
+              <a href={REGISTER_URL} target="_blank" rel="noopener noreferrer" className="hover:text-neutral-900">Terms</a>
+              <a href={REGISTER_URL} target="_blank" rel="noopener noreferrer" className="hover:text-neutral-900">Cookies</a>
             </div>
           </div>
         </div>
